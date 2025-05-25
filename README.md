@@ -42,6 +42,7 @@ EpiSeq:
 工具：SRA Toolkit、FastQC、Trimmomatic、HISAT2、samtools、
 featureCounts。
 流程：数据下载 → 数据质控 → 数据过滤 → 比对到参考基因组 → 基因定量。
+
 3.
 数据集与方法
  
@@ -77,13 +78,6 @@ fastqc SRR5354177_1.fastq SRR5354177_2.fastq
  3. 
 数据过滤
 使用Trimmomatic过滤低质量序列和接头序列，保留高质量读长对。
-trimmomatic PE -phred33 \
- SRR5354177_1.fastq SRR5354177_2.fastq \
- SRR5354177_1_trimmed.fastq SRR5354177_1_unpaired.fastq \
- SRR5354177_2_trimmed.fastq SRR5354177_2_unpaired.fastq \
- ILLUMINACLIP:TruSeq3-PE.fa:2:30:10 LEADING:3 TRAILING:3 
-\
- SLIDINGWINDOW:4:15 MINLEN:36
  4. 
 参考基因组下载与索引构建
 下载人类参考基因组（
@@ -92,21 +86,15 @@ Homo_sapiens.GRCh38）。
 5. 
 比对到参考基因组
 使用HISAT2将过滤后的数据比对到参考基因组，生成
-hisat2 -x reference_genome \-1 SRR5354177_1_trimmed.fastq -2 
-SRR5354177_2_trimmed.fastq \-S SRR5354177.sam
- .sam文件。
 6. 
 生成
 BAM
 文件并排序
 使用samtools将SAM文件转换为BAM文件并进行排序。
-samtools view -bS SRR5354177.sam > SRR5354177.bam
- samtools sort SRR5354177.bam -o SRR5354177_sorted.bam
  7. 
 基因定量
 使用featureCounts进行基因定量，生成基因表达计数文件。
-featureCounts -a annotation.gtf -o counts.txt 
-SRR5354177_sorted.bam
+
  4.
 结果
  
