@@ -106,15 +106,15 @@ HISAT2比对结果显示，整体比对率为68.30%。这一比例略低于预�
 使用更全面的参考基因组版本（如包含非编码区域）。
 调整HISAT2的比对参数，增加对复杂区域的容忍度。
 结合其他比对工具（如STAR）进行验证。
-4. 
-基因定量
+
+4. 基因定量
 featureCounts定量结果显示，成功分配比例为58.50%。这一比例表明，部分读长
 未被分配到已知基因区域，可能原因包括：
 读长比对到非编码区域或未注释的基因组区域。
 基因注释文件（GTF）不完整或与参考基因组版本不匹配。
 数据中存在转录本异构体或剪接变异。
-6.
-参考文献
+
+### 6.参考文献
  
 [1]  FAURE J, MORIN G, DUTERTRE F. Incidences neuropsychiatriques et endocriniennes 
 dans l'épilepsie temporale [Neuropsychiatric and endocrine aspects in temporal epilepsy]. 
