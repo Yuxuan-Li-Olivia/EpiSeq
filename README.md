@@ -125,8 +125,7 @@ doi: 10.1093/bioinformatics/btt656. Epub 2013 Nov 13. PMID: 24227677.
  [3]  Pertea, M., Kim, D., Pertea, G. et al. Transcript-level expression analysis of RNA-seq 
 experiments with HISAT, StringTie and Ballgown. Nat Protoc 11, 1650–1667 (2016). http
  s://doi.org/10.1038/nprot.2016.095
-7.
-附录
+### 7.附录
  
 计算环境配置信息
  
@@ -139,8 +138,4 @@ Trimmomatic: 0.39
 HISAT2: 2.2.1  
 samtools: 1.12  
 featureCounts: 2.0.1  
-8.
-项目核心脚本
- 
-完整脚本及分析产生的相关文件已发布至GitHub：[项目链接](https://github.com/Yuxuan
-Li-Olivia/EpiSeq.gi
+
